@@ -1,13 +1,15 @@
 import numpy as np
 from scipy import linalg
 
+
 class CantileverBeam:
     """
-    Classe que implementa o modelo baseado em elementos finitos para a simulação de uma viga engastada
+    Classe que implementa o modelo baseado em elementos finitos para a
+    simulação de uma viga engastada
     """
-    
-    #Parâmetros gerais
-    m = 1 #massa: sempre 1 para todas as vigas
+
+    # Parâmetros gerais
+    m = 1  # massa: sempre 1 para todas as vigas
 
     def __init__(self, npoints=60, width=0.05, thickness=0.00575, lenght=0.58, density=7900, elasticmod=2e11, Tsampling=0.004, 
                 nmodes=5, damp=[0.002, 0.002, 0.001, 0.001, 0.001], forcescaler=1, noisestd=0):

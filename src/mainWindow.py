@@ -39,10 +39,10 @@ class MainWindow(QMainWindow):
         self.static_ax2.set_ylabel("Acceleration ($m/s^2$)")
 
         # Connections
-        self.ui.rbt_pulseft.toggled.connect(self.disturbanceType)
+        self.ui.rbt_pulseft.toggled.connect(self.enableInputs)
         self.ui.btn_update.clicked.connect(self.updateValues)
 
-    def disturbanceType(self):
+    def enableInputs(self):
         """
         This function changes the enabled lables and input boxes,
         depending on the selected type of disturbance.
