@@ -11,7 +11,7 @@ class CantileverBeam:
     # Parâmetros gerais
     m = 1  # massa: sempre 1 para todas as vigas
 
-    def __init__(self, npoints=60, width=0.05, thickness=0.00575, lenght=0.58, density=7900, elasticmod=2e11, Tsampling=0.004, 
+    def __init__(self, npoints, width, thickness, lenght, density, elasticmod, Tsampling, 
                 nmodes=5, damp=[0.002, 0.002, 0.001, 0.001, 0.001], forcescaler=1, noisestd=0):
         """
         Construtor da classe. Os parâmetros já tem valores padrão relacionados com os valores de referência da viga utilizada.
@@ -41,11 +41,11 @@ class CantileverBeam:
         self.evaluateModesAndFreqs()
         self.memiir = 3
         self.Fs = 1 / self.Ts 
-        self.wn = 2 * np.pi * self.freqsHz # Undamped natural frequency
+        self.wn = 2 * np.pi * self.freqsHz  # Undamped natural frequency
         self.zeta = np.array(damp)
-        self.wd = self.wn * np.sqrt(1-self.zeta[:self.nmodes]**2) # Damped natural frequency
-        self.Aiir = np.zeros((self.nmodes, self.memiir-1)) # Coeficientes dos denominadores dos IIRs de cada modo
-        self.Biir = np.zeros((self.nmodes, self.memiir)) # Coeficientes dos numeradores dos IIRs de cada modo
+        self.wd = self.wn * np.sqrt(1-self.zeta[:self.nmodes]**2)  # Damped natural frequency
+        self.Aiir = np.zeros((self.nmodes, self.memiir-1))  # Coeficientes dos denominadores dos IIRs de cada modo
+        self.Biir = np.zeros((self.nmodes, self.memiir))  # Coeficientes dos numeradores dos IIRs de cada modo
 
         # Cálculo dos coeficientes dos filtros IIR
         for k in range(0, self.nmodes):

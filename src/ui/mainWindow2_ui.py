@@ -35,18 +35,18 @@ class Ui_MainWindow(object):
         self.groupBox.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
         self.horizontalLayout_4 = QHBoxLayout(self.groupBox)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.radioButton = QRadioButton(self.groupBox)
-        self.radioButton.setObjectName(u"radioButton")
-        self.radioButton.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-        self.radioButton.setChecked(True)
+        self.rbt_default = QRadioButton(self.groupBox)
+        self.rbt_default.setObjectName(u"rbt_default")
+        self.rbt_default.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+        self.rbt_default.setChecked(True)
 
-        self.horizontalLayout_4.addWidget(self.radioButton)
+        self.horizontalLayout_4.addWidget(self.rbt_default)
 
-        self.radioButton_2 = QRadioButton(self.groupBox)
-        self.radioButton_2.setObjectName(u"radioButton_2")
-        self.radioButton_2.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+        self.rbt_insert = QRadioButton(self.groupBox)
+        self.rbt_insert.setObjectName(u"rbt_insert")
+        self.rbt_insert.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
 
-        self.horizontalLayout_4.addWidget(self.radioButton_2)
+        self.horizontalLayout_4.addWidget(self.rbt_insert)
 
 
         self.verticalLayout_7.addWidget(self.groupBox)
@@ -60,102 +60,18 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.gridLayout_7 = QGridLayout()
         self.gridLayout_7.setObjectName(u"gridLayout_7")
-        self.lbl_23 = QLabel(self.gbx_cvset)
-        self.lbl_23.setObjectName(u"lbl_23")
-        self.lbl_23.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";\n"
-"background-color: rgb(255, 255, 255);")
-
-        self.gridLayout_7.addWidget(self.lbl_23, 2, 1, 1, 1)
-
         self.lbl_25 = QLabel(self.gbx_cvset)
         self.lbl_25.setObjectName(u"lbl_25")
         self.lbl_25.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
 
-        self.gridLayout_7.addWidget(self.lbl_25, 4, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.lbl_25, 3, 1, 1, 1)
 
         self.lbl_20 = QLabel(self.gbx_cvset)
         self.lbl_20.setObjectName(u"lbl_20")
         self.lbl_20.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
 
-        self.gridLayout_7.addWidget(self.lbl_20, 7, 0, 1, 1)
-
-        self.lbl_19 = QLabel(self.gbx_cvset)
-        self.lbl_19.setObjectName(u"lbl_19")
-        self.lbl_19.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_7.addWidget(self.lbl_19, 6, 0, 1, 1)
-
-        self.lbl_21 = QLabel(self.gbx_cvset)
-        self.lbl_21.setObjectName(u"lbl_21")
-        self.lbl_21.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_7.addWidget(self.lbl_21, 0, 0, 1, 1)
-
-        self.lbl_15 = QLabel(self.gbx_cvset)
-        self.lbl_15.setObjectName(u"lbl_15")
-        self.lbl_15.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_7.addWidget(self.lbl_15, 2, 0, 1, 1)
-
-        self.lbl_16 = QLabel(self.gbx_cvset)
-        self.lbl_16.setObjectName(u"lbl_16")
-        self.lbl_16.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_7.addWidget(self.lbl_16, 3, 0, 1, 1)
-
-        self.lbl_17 = QLabel(self.gbx_cvset)
-        self.lbl_17.setObjectName(u"lbl_17")
-        self.lbl_17.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_7.addWidget(self.lbl_17, 4, 0, 1, 1)
-
-        self.lbl_26 = QLabel(self.gbx_cvset)
-        self.lbl_26.setObjectName(u"lbl_26")
-        self.lbl_26.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";\n"
-"background-color: rgb(255, 255, 255);")
-
-        self.gridLayout_7.addWidget(self.lbl_26, 5, 1, 1, 1)
-
-        self.lbl_29 = QLabel(self.gbx_cvset)
-        self.lbl_29.setObjectName(u"lbl_29")
-        self.lbl_29.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_7.addWidget(self.lbl_29, 0, 1, 1, 1)
-
-        self.lbl_18 = QLabel(self.gbx_cvset)
-        self.lbl_18.setObjectName(u"lbl_18")
-        self.lbl_18.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_7.addWidget(self.lbl_18, 5, 0, 1, 1)
-
-        self.lbl_27 = QLabel(self.gbx_cvset)
-        self.lbl_27.setObjectName(u"lbl_27")
-        self.lbl_27.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_7.addWidget(self.lbl_27, 6, 1, 1, 1)
-
-        self.lbl_28 = QLabel(self.gbx_cvset)
-        self.lbl_28.setObjectName(u"lbl_28")
-        self.lbl_28.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_7.addWidget(self.lbl_28, 7, 1, 1, 1)
-
-        self.lbl_24 = QLabel(self.gbx_cvset)
-        self.lbl_24.setObjectName(u"lbl_24")
-        self.lbl_24.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_7.addWidget(self.lbl_24, 3, 1, 1, 1)
-
-        self.lbl_22 = QLabel(self.gbx_cvset)
-        self.lbl_22.setObjectName(u"lbl_22")
-        self.lbl_22.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_7.addWidget(self.lbl_22, 1, 0, 1, 1)
+        self.gridLayout_7.addWidget(self.lbl_20, 6, 0, 1, 1)
 
         self.lbl_30 = QLabel(self.gbx_cvset)
         self.lbl_30.setObjectName(u"lbl_30")
@@ -164,27 +80,159 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.lbl_30, 1, 1, 1, 1)
 
+        self.lbl_18 = QLabel(self.gbx_cvset)
+        self.lbl_18.setObjectName(u"lbl_18")
+        self.lbl_18.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_7.addWidget(self.lbl_18, 4, 0, 1, 1)
+
+        self.lbl_23 = QLabel(self.gbx_cvset)
+        self.lbl_23.setObjectName(u"lbl_23")
+        self.lbl_23.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(255, 255, 255);")
+
+        self.gridLayout_7.addWidget(self.lbl_23, 2, 1, 1, 1)
+
+        self.lbl_19 = QLabel(self.gbx_cvset)
+        self.lbl_19.setObjectName(u"lbl_19")
+        self.lbl_19.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_7.addWidget(self.lbl_19, 5, 0, 1, 1)
+
+        self.lbl_26 = QLabel(self.gbx_cvset)
+        self.lbl_26.setObjectName(u"lbl_26")
+        self.lbl_26.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(255, 255, 255);")
+
+        self.gridLayout_7.addWidget(self.lbl_26, 4, 1, 1, 1)
+
+        self.lbl_21 = QLabel(self.gbx_cvset)
+        self.lbl_21.setObjectName(u"lbl_21")
+        self.lbl_21.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_7.addWidget(self.lbl_21, 0, 0, 1, 1)
+
+        self.lbl_28 = QLabel(self.gbx_cvset)
+        self.lbl_28.setObjectName(u"lbl_28")
+        self.lbl_28.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_7.addWidget(self.lbl_28, 6, 1, 1, 1)
+
+        self.lbl_17 = QLabel(self.gbx_cvset)
+        self.lbl_17.setObjectName(u"lbl_17")
+        self.lbl_17.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_7.addWidget(self.lbl_17, 3, 0, 1, 1)
+
+        self.lbl_27 = QLabel(self.gbx_cvset)
+        self.lbl_27.setObjectName(u"lbl_27")
+        self.lbl_27.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_7.addWidget(self.lbl_27, 5, 1, 1, 1)
+
+        self.lbl_29 = QLabel(self.gbx_cvset)
+        self.lbl_29.setObjectName(u"lbl_29")
+        self.lbl_29.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_7.addWidget(self.lbl_29, 0, 1, 1, 1)
+
+        self.lbl_22 = QLabel(self.gbx_cvset)
+        self.lbl_22.setObjectName(u"lbl_22")
+        self.lbl_22.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_7.addWidget(self.lbl_22, 1, 0, 1, 1)
+
+        self.lbl_15 = QLabel(self.gbx_cvset)
+        self.lbl_15.setObjectName(u"lbl_15")
+        self.lbl_15.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_7.addWidget(self.lbl_15, 2, 0, 1, 1)
+
 
         self.horizontalLayout_6.addLayout(self.gridLayout_7)
 
 
         self.horizontalLayout_5.addWidget(self.gbx_cvset)
 
-        self.groupBox_2 = QGroupBox(self.tab_5)
-        self.groupBox_2.setObjectName(u"groupBox_2")
-        self.groupBox_2.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
-        self.horizontalLayout_2 = QHBoxLayout(self.groupBox_2)
+        self.gbx_beamset = QGroupBox(self.tab_5)
+        self.gbx_beamset.setObjectName(u"gbx_beamset")
+        self.gbx_beamset.setEnabled(False)
+        self.gbx_beamset.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
+        self.horizontalLayout_2 = QHBoxLayout(self.gbx_beamset)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.gridLayout_10 = QGridLayout()
         self.gridLayout_10.setObjectName(u"gridLayout_10")
         self.gridLayout_10.setVerticalSpacing(12)
-        self.sbx_ndiv = QSpinBox(self.groupBox_2)
+        self.lbl_36 = QLabel(self.gbx_beamset)
+        self.lbl_36.setObjectName(u"lbl_36")
+        self.lbl_36.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_10.addWidget(self.lbl_36, 6, 0, 1, 1)
+
+        self.dbx_elastm = QDoubleSpinBox(self.gbx_beamset)
+        self.dbx_elastm.setObjectName(u"dbx_elastm")
+        self.dbx_elastm.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_10.addWidget(self.dbx_elastm, 1, 1, 1, 1)
+
+        self.dbx_width = QDoubleSpinBox(self.gbx_beamset)
+        self.dbx_width.setObjectName(u"dbx_width")
+        self.dbx_width.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_10.addWidget(self.dbx_width, 3, 1, 1, 1)
+
+        self.dbx_density = QDoubleSpinBox(self.gbx_beamset)
+        self.dbx_density.setObjectName(u"dbx_density")
+        self.dbx_density.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_10.addWidget(self.dbx_density, 6, 1, 1, 1)
+
+        self.lbl_37 = QLabel(self.gbx_beamset)
+        self.lbl_37.setObjectName(u"lbl_37")
+        self.lbl_37.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_10.addWidget(self.lbl_37, 0, 0, 1, 1)
+
+        self.lbl_33 = QLabel(self.gbx_beamset)
+        self.lbl_33.setObjectName(u"lbl_33")
+        self.lbl_33.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_10.addWidget(self.lbl_33, 3, 0, 1, 1)
+
+        self.sbx_ndiv = QSpinBox(self.gbx_beamset)
         self.sbx_ndiv.setObjectName(u"sbx_ndiv")
         self.sbx_ndiv.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
 
         self.gridLayout_10.addWidget(self.sbx_ndiv, 2, 1, 1, 1)
 
-        self.cbx_material = QComboBox(self.groupBox_2)
+        self.dbx_thickn = QDoubleSpinBox(self.gbx_beamset)
+        self.dbx_thickn.setObjectName(u"dbx_thickn")
+        self.dbx_thickn.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_10.addWidget(self.dbx_thickn, 4, 1, 1, 1)
+
+        self.lbl_35 = QLabel(self.gbx_beamset)
+        self.lbl_35.setObjectName(u"lbl_35")
+        self.lbl_35.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_10.addWidget(self.lbl_35, 5, 0, 1, 1)
+
+        self.lbl_34 = QLabel(self.gbx_beamset)
+        self.lbl_34.setObjectName(u"lbl_34")
+        self.lbl_34.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_10.addWidget(self.lbl_34, 4, 0, 1, 1)
+
+        self.lbl_38 = QLabel(self.gbx_beamset)
+        self.lbl_38.setObjectName(u"lbl_38")
+        self.lbl_38.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
+
+        self.gridLayout_10.addWidget(self.lbl_38, 1, 0, 1, 1)
+
+        self.cbx_material = QComboBox(self.gbx_beamset)
         self.cbx_material.addItem("")
         self.cbx_material.addItem("")
         self.cbx_material.addItem("")
@@ -196,104 +244,32 @@ class Ui_MainWindow(object):
 
         self.gridLayout_10.addWidget(self.cbx_material, 0, 1, 1, 1)
 
-        self.dbx_density = QDoubleSpinBox(self.groupBox_2)
-        self.dbx_density.setObjectName(u"dbx_density")
-        self.dbx_density.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_10.addWidget(self.dbx_density, 7, 1, 1, 1)
-
-        self.lbl_31 = QLabel(self.groupBox_2)
+        self.lbl_31 = QLabel(self.gbx_beamset)
         self.lbl_31.setObjectName(u"lbl_31")
         self.lbl_31.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
 
         self.gridLayout_10.addWidget(self.lbl_31, 2, 0, 1, 1)
 
-        self.sbx_nvibm = QSpinBox(self.groupBox_2)
-        self.sbx_nvibm.setObjectName(u"sbx_nvibm")
-        self.sbx_nvibm.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_10.addWidget(self.sbx_nvibm, 3, 1, 1, 1)
-
-        self.lbl_37 = QLabel(self.groupBox_2)
-        self.lbl_37.setObjectName(u"lbl_37")
-        self.lbl_37.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_10.addWidget(self.lbl_37, 0, 0, 1, 1)
-
-        self.dbx_thickn = QDoubleSpinBox(self.groupBox_2)
-        self.dbx_thickn.setObjectName(u"dbx_thickn")
-        self.dbx_thickn.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_10.addWidget(self.dbx_thickn, 5, 1, 1, 1)
-
-        self.lbl_35 = QLabel(self.groupBox_2)
-        self.lbl_35.setObjectName(u"lbl_35")
-        self.lbl_35.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_10.addWidget(self.lbl_35, 6, 0, 1, 1)
-
-        self.lbl_38 = QLabel(self.groupBox_2)
-        self.lbl_38.setObjectName(u"lbl_38")
-        self.lbl_38.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_10.addWidget(self.lbl_38, 1, 0, 1, 1)
-
-        self.lbl_33 = QLabel(self.groupBox_2)
-        self.lbl_33.setObjectName(u"lbl_33")
-        self.lbl_33.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_10.addWidget(self.lbl_33, 4, 0, 1, 1)
-
-        self.lbl_34 = QLabel(self.groupBox_2)
-        self.lbl_34.setObjectName(u"lbl_34")
-        self.lbl_34.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_10.addWidget(self.lbl_34, 5, 0, 1, 1)
-
-        self.dbx_length = QDoubleSpinBox(self.groupBox_2)
+        self.dbx_length = QDoubleSpinBox(self.gbx_beamset)
         self.dbx_length.setObjectName(u"dbx_length")
         self.dbx_length.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
 
-        self.gridLayout_10.addWidget(self.dbx_length, 6, 1, 1, 1)
-
-        self.lbl_32 = QLabel(self.groupBox_2)
-        self.lbl_32.setObjectName(u"lbl_32")
-        self.lbl_32.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_10.addWidget(self.lbl_32, 3, 0, 1, 1)
-
-        self.dbx_elastm = QDoubleSpinBox(self.groupBox_2)
-        self.dbx_elastm.setObjectName(u"dbx_elastm")
-        self.dbx_elastm.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_10.addWidget(self.dbx_elastm, 1, 1, 1, 1)
-
-        self.dbx_width = QDoubleSpinBox(self.groupBox_2)
-        self.dbx_width.setObjectName(u"dbx_width")
-        self.dbx_width.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_10.addWidget(self.dbx_width, 4, 1, 1, 1)
-
-        self.lbl_36 = QLabel(self.groupBox_2)
-        self.lbl_36.setObjectName(u"lbl_36")
-        self.lbl_36.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
-
-        self.gridLayout_10.addWidget(self.lbl_36, 7, 0, 1, 1)
+        self.gridLayout_10.addWidget(self.dbx_length, 5, 1, 1, 1)
 
 
         self.horizontalLayout_2.addLayout(self.gridLayout_10)
 
 
-        self.horizontalLayout_5.addWidget(self.groupBox_2)
+        self.horizontalLayout_5.addWidget(self.gbx_beamset)
 
 
         self.verticalLayout_7.addLayout(self.horizontalLayout_5)
 
-        self.pushButton = QPushButton(self.tab_5)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
+        self.btn_set = QPushButton(self.tab_5)
+        self.btn_set.setObjectName(u"btn_set")
+        self.btn_set.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
 
-        self.verticalLayout_7.addWidget(self.pushButton)
+        self.verticalLayout_7.addWidget(self.btn_set)
 
         self.twd_windows.addTab(self.tab_5, "")
         self.tab = QWidget()
@@ -737,6 +713,18 @@ class Ui_MainWindow(object):
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
+        QWidget.setTabOrder(self.pbt_startrt, self.rbt_default)
+        QWidget.setTabOrder(self.rbt_default, self.rbt_insert)
+        QWidget.setTabOrder(self.rbt_insert, self.cbx_material)
+        QWidget.setTabOrder(self.cbx_material, self.dbx_elastm)
+        QWidget.setTabOrder(self.dbx_elastm, self.sbx_ndiv)
+        QWidget.setTabOrder(self.sbx_ndiv, self.dbx_width)
+        QWidget.setTabOrder(self.dbx_width, self.dbx_thickn)
+        QWidget.setTabOrder(self.dbx_thickn, self.dbx_length)
+        QWidget.setTabOrder(self.dbx_length, self.dbx_density)
+        QWidget.setTabOrder(self.dbx_density, self.btn_set)
+        QWidget.setTabOrder(self.btn_set, self.twd_windows)
+        QWidget.setTabOrder(self.twd_windows, self.rbt_pulseft)
         QWidget.setTabOrder(self.rbt_pulseft, self.rbt_harft)
         QWidget.setTabOrder(self.rbt_harft, self.dbx_forceft)
         QWidget.setTabOrder(self.dbx_forceft, self.box_time)
@@ -744,7 +732,17 @@ class Ui_MainWindow(object):
         QWidget.setTabOrder(self.sbx_aposft, self.sbx_rposft)
         QWidget.setTabOrder(self.sbx_rposft, self.dbx_freqft)
         QWidget.setTabOrder(self.dbx_freqft, self.btn_update)
-        QWidget.setTabOrder(self.btn_update, self.hsl_pos)
+        QWidget.setTabOrder(self.btn_update, self.rbt_spulsert)
+        QWidget.setTabOrder(self.rbt_spulsert, self.rbt_hforcert)
+        QWidget.setTabOrder(self.rbt_hforcert, self.sbx_aposrt)
+        QWidget.setTabOrder(self.sbx_aposrt, self.sbx_rposrt)
+        QWidget.setTabOrder(self.sbx_rposrt, self.rbt_normalrt)
+        QWidget.setTabOrder(self.rbt_normalrt, self.rbt_smotionrt)
+        QWidget.setTabOrder(self.rbt_smotionrt, self.rbt_1)
+        QWidget.setTabOrder(self.rbt_1, self.rbt_01)
+        QWidget.setTabOrder(self.rbt_01, self.rbt_001)
+        QWidget.setTabOrder(self.rbt_001, self.rbt_0001)
+        QWidget.setTabOrder(self.rbt_0001, self.hsl_pos)
         QWidget.setTabOrder(self.hsl_pos, self.hsl_force)
 
         self.retranslateUi(MainWindow)
@@ -758,26 +756,30 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Options", None))
-        self.radioButton.setText(QCoreApplication.translate("MainWindow", u"Default Values", None))
-        self.radioButton_2.setText(QCoreApplication.translate("MainWindow", u"Insert Values", None))
+        self.rbt_default.setText(QCoreApplication.translate("MainWindow", u"Default Values", None))
+        self.rbt_insert.setText(QCoreApplication.translate("MainWindow", u"Insert Values", None))
         self.gbx_cvset.setTitle(QCoreApplication.translate("MainWindow", u"Current Values", None))
-        self.lbl_23.setText(QCoreApplication.translate("MainWindow", u"0", None))
-        self.lbl_25.setText(QCoreApplication.translate("MainWindow", u"0.0", None))
+        self.lbl_25.setText(QCoreApplication.translate("MainWindow", u"0.05", None))
         self.lbl_20.setText(QCoreApplication.translate("MainWindow", u"Density:", None))
-        self.lbl_19.setText(QCoreApplication.translate("MainWindow", u"Length (m):", None))
-        self.lbl_21.setText(QCoreApplication.translate("MainWindow", u"Material:", None))
-        self.lbl_15.setText(QCoreApplication.translate("MainWindow", u"Number of divisions:", None))
-        self.lbl_16.setText(QCoreApplication.translate("MainWindow", u"Number of vibration modes:", None))
-        self.lbl_17.setText(QCoreApplication.translate("MainWindow", u"Width (m):", None))
-        self.lbl_26.setText(QCoreApplication.translate("MainWindow", u"0.0", None))
-        self.lbl_29.setText(QCoreApplication.translate("MainWindow", u"  -", None))
+        self.lbl_30.setText(QCoreApplication.translate("MainWindow", u"200", None))
         self.lbl_18.setText(QCoreApplication.translate("MainWindow", u"Thickness (m):", None))
-        self.lbl_27.setText(QCoreApplication.translate("MainWindow", u"0.0", None))
-        self.lbl_28.setText(QCoreApplication.translate("MainWindow", u"0.0", None))
-        self.lbl_24.setText(QCoreApplication.translate("MainWindow", u"0", None))
-        self.lbl_22.setText(QCoreApplication.translate("MainWindow", u"Elastic modulus:", None))
-        self.lbl_30.setText(QCoreApplication.translate("MainWindow", u"0.0", None))
-        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Settings", None))
+        self.lbl_23.setText(QCoreApplication.translate("MainWindow", u"60", None))
+        self.lbl_19.setText(QCoreApplication.translate("MainWindow", u"Length (m):", None))
+        self.lbl_26.setText(QCoreApplication.translate("MainWindow", u"0.00575", None))
+        self.lbl_21.setText(QCoreApplication.translate("MainWindow", u"Material:", None))
+        self.lbl_28.setText(QCoreApplication.translate("MainWindow", u"7900", None))
+        self.lbl_17.setText(QCoreApplication.translate("MainWindow", u"Width (m):", None))
+        self.lbl_27.setText(QCoreApplication.translate("MainWindow", u"0.58", None))
+        self.lbl_29.setText(QCoreApplication.translate("MainWindow", u"Steel", None))
+        self.lbl_22.setText(QCoreApplication.translate("MainWindow", u"Elastic modulus (GPa):", None))
+        self.lbl_15.setText(QCoreApplication.translate("MainWindow", u"Number of divisions:", None))
+        self.gbx_beamset.setTitle(QCoreApplication.translate("MainWindow", u"Settings", None))
+        self.lbl_36.setText(QCoreApplication.translate("MainWindow", u"Density:", None))
+        self.lbl_37.setText(QCoreApplication.translate("MainWindow", u"Material:", None))
+        self.lbl_33.setText(QCoreApplication.translate("MainWindow", u"Width (m):", None))
+        self.lbl_35.setText(QCoreApplication.translate("MainWindow", u"Length (m):", None))
+        self.lbl_34.setText(QCoreApplication.translate("MainWindow", u"Thickness (m):", None))
+        self.lbl_38.setText(QCoreApplication.translate("MainWindow", u"Elastic modulus (GPa):", None))
         self.cbx_material.setItemText(0, QCoreApplication.translate("MainWindow", u"Default", None))
         self.cbx_material.setItemText(1, QCoreApplication.translate("MainWindow", u"Steel", None))
         self.cbx_material.setItemText(2, QCoreApplication.translate("MainWindow", u"Iron", None))
@@ -785,14 +787,7 @@ class Ui_MainWindow(object):
         self.cbx_material.setItemText(4, QCoreApplication.translate("MainWindow", u"Other", None))
 
         self.lbl_31.setText(QCoreApplication.translate("MainWindow", u"Number of divisions:", None))
-        self.lbl_37.setText(QCoreApplication.translate("MainWindow", u"Material:", None))
-        self.lbl_35.setText(QCoreApplication.translate("MainWindow", u"Length (m):", None))
-        self.lbl_38.setText(QCoreApplication.translate("MainWindow", u"Elastic modulus:", None))
-        self.lbl_33.setText(QCoreApplication.translate("MainWindow", u"Width (m):", None))
-        self.lbl_34.setText(QCoreApplication.translate("MainWindow", u"Thickness (m):", None))
-        self.lbl_32.setText(QCoreApplication.translate("MainWindow", u"Number of vibration modes:", None))
-        self.lbl_36.setText(QCoreApplication.translate("MainWindow", u"Density:", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"OK", None))
+        self.btn_set.setText(QCoreApplication.translate("MainWindow", u"OK", None))
         self.twd_windows.setTabText(self.twd_windows.indexOf(self.tab_5), QCoreApplication.translate("MainWindow", u"Beam Settings", None))
         self.gbx_current.setTitle(QCoreApplication.translate("MainWindow", u"Current Values", None))
         self.lbl_1.setText(QCoreApplication.translate("MainWindow", u"Force (N):", None))

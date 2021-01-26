@@ -44,7 +44,7 @@
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
-            <widget class="QRadioButton" name="radioButton">
+            <widget class="QRadioButton" name="rbt_default">
              <property name="styleSheet">
               <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
              </property>
@@ -57,7 +57,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QRadioButton" name="radioButton_2">
+            <widget class="QRadioButton" name="rbt_insert">
              <property name="styleSheet">
               <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
              </property>
@@ -82,29 +82,18 @@
             <layout class="QHBoxLayout" name="horizontalLayout_6">
              <item>
               <layout class="QGridLayout" name="gridLayout_7">
-               <item row="2" column="1">
-                <widget class="QLabel" name="lbl_23">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;
-background-color: rgb(255, 255, 255);</string>
-                 </property>
-                 <property name="text">
-                  <string>0</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="1">
+               <item row="3" column="1">
                 <widget class="QLabel" name="lbl_25">
                  <property name="styleSheet">
                   <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;
 background-color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>0.0</string>
+                  <string>0.05</string>
                  </property>
                 </widget>
                </item>
-               <item row="7" column="0">
+               <item row="6" column="0">
                 <widget class="QLabel" name="lbl_20">
                  <property name="styleSheet">
                   <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
@@ -114,13 +103,56 @@ background-color: rgb(255, 255, 255);</string>
                  </property>
                 </widget>
                </item>
-               <item row="6" column="0">
+               <item row="1" column="1">
+                <widget class="QLabel" name="lbl_30">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>200</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="lbl_18">
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>Thickness (m):</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLabel" name="lbl_23">
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="text">
+                  <string>60</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
                 <widget class="QLabel" name="lbl_19">
                  <property name="styleSheet">
                   <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  </property>
                  <property name="text">
                   <string>Length (m):</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLabel" name="lbl_26">
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="text">
+                  <string>0.00575</string>
                  </property>
                 </widget>
                </item>
@@ -134,27 +166,18 @@ background-color: rgb(255, 255, 255);</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="lbl_15">
+               <item row="6" column="1">
+                <widget class="QLabel" name="lbl_28">
                  <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                  <string notr="true">background-color: rgb(255, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  </property>
                  <property name="text">
-                  <string>Number of divisions:</string>
+                  <string>7900</string>
                  </property>
                 </widget>
                </item>
                <item row="3" column="0">
-                <widget class="QLabel" name="lbl_16">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Number of vibration modes:</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
                 <widget class="QLabel" name="lbl_17">
                  <property name="styleSheet">
                   <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
@@ -165,13 +188,13 @@ background-color: rgb(255, 255, 255);</string>
                 </widget>
                </item>
                <item row="5" column="1">
-                <widget class="QLabel" name="lbl_26">
+                <widget class="QLabel" name="lbl_27">
                  <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;
-background-color: rgb(255, 255, 255);</string>
+                  <string notr="true">background-color: rgb(255, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  </property>
                  <property name="text">
-                  <string>0.0</string>
+                  <string>0.58</string>
                  </property>
                 </widget>
                </item>
@@ -182,50 +205,7 @@ background-color: rgb(255, 255, 255);</string>
 font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  </property>
                  <property name="text">
-                  <string>  -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0">
-                <widget class="QLabel" name="lbl_18">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Thickness (m):</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="1">
-                <widget class="QLabel" name="lbl_27">
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(255, 255, 255);
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>0.0</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="1">
-                <widget class="QLabel" name="lbl_28">
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(255, 255, 255);
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>0.0</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="1">
-                <widget class="QLabel" name="lbl_24">
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(255, 255, 255);
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>0</string>
+                  <string>Steel</string>
                  </property>
                 </widget>
                </item>
@@ -235,18 +215,17 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                   <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  </property>
                  <property name="text">
-                  <string>Elastic modulus:</string>
+                  <string>Elastic modulus (GPa):</string>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="lbl_30">
+               <item row="2" column="0">
+                <widget class="QLabel" name="lbl_15">
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(255, 255, 255);
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  </property>
                  <property name="text">
-                  <string>0.0</string>
+                  <string>Number of divisions:</string>
                  </property>
                 </widget>
                </item>
@@ -256,7 +235,10 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
            </widget>
           </item>
           <item>
-           <widget class="QGroupBox" name="groupBox_2">
+           <widget class="QGroupBox" name="gbx_beamset">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="styleSheet">
              <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
             </property>
@@ -269,10 +251,98 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                <property name="verticalSpacing">
                 <number>12</number>
                </property>
+               <item row="6" column="0">
+                <widget class="QLabel" name="lbl_36">
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>Density:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QDoubleSpinBox" name="dbx_elastm">
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QDoubleSpinBox" name="dbx_width">
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QDoubleSpinBox" name="dbx_density">
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="lbl_37">
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>Material:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="lbl_33">
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>Width (m):</string>
+                 </property>
+                </widget>
+               </item>
                <item row="2" column="1">
                 <widget class="QSpinBox" name="sbx_ndiv">
                  <property name="styleSheet">
                   <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QDoubleSpinBox" name="dbx_thickn">
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="lbl_35">
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>Length (m):</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="lbl_34">
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>Thickness (m):</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="lbl_38">
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>Elastic modulus (GPa):</string>
                  </property>
                 </widget>
                </item>
@@ -309,13 +379,6 @@ background-color: rgb(255, 255, 255);</string>
                  </item>
                 </widget>
                </item>
-               <item row="7" column="1">
-                <widget class="QDoubleSpinBox" name="dbx_density">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                </widget>
-               </item>
                <item row="2" column="0">
                 <widget class="QLabel" name="lbl_31">
                  <property name="styleSheet">
@@ -326,108 +389,10 @@ background-color: rgb(255, 255, 255);</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
-                <widget class="QSpinBox" name="sbx_nvibm">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="lbl_37">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Material:</string>
-                 </property>
-                </widget>
-               </item>
                <item row="5" column="1">
-                <widget class="QDoubleSpinBox" name="dbx_thickn">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="0">
-                <widget class="QLabel" name="lbl_35">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Length (m):</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="lbl_38">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Elastic modulus:</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="lbl_33">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Width (m):</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0">
-                <widget class="QLabel" name="lbl_34">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Thickness (m):</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="1">
                 <widget class="QDoubleSpinBox" name="dbx_length">
                  <property name="styleSheet">
                   <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="lbl_32">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Number of vibration modes:</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QDoubleSpinBox" name="dbx_elastm">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="1">
-                <widget class="QDoubleSpinBox" name="dbx_width">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="0">
-                <widget class="QLabel" name="lbl_36">
-                 <property name="styleSheet">
-                  <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Density:</string>
                  </property>
                 </widget>
                </item>
@@ -439,7 +404,7 @@ background-color: rgb(255, 255, 255);</string>
          </layout>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="btn_set">
           <property name="styleSheet">
            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
           </property>
@@ -1140,6 +1105,18 @@ background-color: rgb(255, 255, 255);</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <tabstops>
+  <tabstop>pbt_startrt</tabstop>
+  <tabstop>rbt_default</tabstop>
+  <tabstop>rbt_insert</tabstop>
+  <tabstop>cbx_material</tabstop>
+  <tabstop>dbx_elastm</tabstop>
+  <tabstop>sbx_ndiv</tabstop>
+  <tabstop>dbx_width</tabstop>
+  <tabstop>dbx_thickn</tabstop>
+  <tabstop>dbx_length</tabstop>
+  <tabstop>dbx_density</tabstop>
+  <tabstop>btn_set</tabstop>
+  <tabstop>twd_windows</tabstop>
   <tabstop>rbt_pulseft</tabstop>
   <tabstop>rbt_harft</tabstop>
   <tabstop>dbx_forceft</tabstop>
@@ -1148,6 +1125,16 @@ background-color: rgb(255, 255, 255);</string>
   <tabstop>sbx_rposft</tabstop>
   <tabstop>dbx_freqft</tabstop>
   <tabstop>btn_update</tabstop>
+  <tabstop>rbt_spulsert</tabstop>
+  <tabstop>rbt_hforcert</tabstop>
+  <tabstop>sbx_aposrt</tabstop>
+  <tabstop>sbx_rposrt</tabstop>
+  <tabstop>rbt_normalrt</tabstop>
+  <tabstop>rbt_smotionrt</tabstop>
+  <tabstop>rbt_1</tabstop>
+  <tabstop>rbt_01</tabstop>
+  <tabstop>rbt_001</tabstop>
+  <tabstop>rbt_0001</tabstop>
   <tabstop>hsl_pos</tabstop>
   <tabstop>hsl_force</tabstop>
  </tabstops>
