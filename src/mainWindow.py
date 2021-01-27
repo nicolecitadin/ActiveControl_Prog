@@ -12,21 +12,24 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        # Input Boxes Settings
+        self.ui.dbx_elastic.setMaximum(100000)
+        self.ui.sbx_ndiv.setMaximum(1000)
+        self.ui.dbx_width.setMaximum(1000)
+        self.ui.dbx_length.setMaximum(100000)
+        self.ui.dbx_density.setMaximum(1000000)
+        self.ui.dbx_elastic.setDecimals(3)
+        self.ui.dbx_width.setDecimals(3)
+        self.ui.dbx_thickn.setDecimals(6)
+        self.ui.dbx_length.setDecimals(3)
+        self.ui.dbx_density.setDecimals(3)
         self.ui.sbx_aposft.setMaximum(60)
         self.ui.sbx_rposft.setMaximum(60)
         self.ui.box_time.setDisplayFormat("mm:ss")
 
-        # Beam Settings - Default Values
-        npoints = 60
-        width = 0.05
-        thickness = 0.00575
-        lenght = 0.58
-        density = 7900
-        elasticmod = 2e11
-        Tsampling = 0.004
-
         # Cantilever Beam Initialization
-        self.beam = CantileverBeam(npoints, width, thickness, lenght, density, elasticmod, Tsampling)
+        self.beam = CantileverBeam()
         self.beam.reset()
 
         # Fixed Time Initialization - 'Force x Time' chart
@@ -47,11 +50,32 @@ class MainWindow(QMainWindow):
         self.static_ax2.set_xlabel("Time (s)")
         self.static_ax2.set_ylabel("Acceleration ($m/s^2$)")
 
+        # Real Time Initialization - 'Force x Time' chart
+        layout_frt = QVBoxLayout(self.ui.wdg_forcert)
+        dynamic_canvas1 = FigureCanvas(Figure(figsize=(6, 4)))
+        layout_frt.addWidget(dynamic_canvas1)
+        self.dynamic_ax1 = dynamic_canvas1.figure.subplots()
+        self.dynamic_ax1.set_title("Force", fontsize=16)
+        self.dynamic_ax1.set_xlabel("Time (s)")
+        self.dynamic_ax1.set_ylabel("Force (N)")
+
+        # Real Time Initialization - 'Accelaration x Time' chart
+        layout_art = QVBoxLayout(self.ui.wdg_accert)
+        dynamic_canvas2 = FigureCanvas(Figure(figsize=(6, 4)))
+        layout_art.addWidget(dynamic_canvas2)
+        self.dynamic_ax2 = dynamic_canvas2.figure.subplots()
+        self.dynamic_ax2.set_title("Acceleration", fontsize=16)
+        self.dynamic_ax2.set_xlabel("Time (s)")
+        self.dynamic_ax2.set_ylabel("Acceleration ($m/s^2$)")
+
         # Connections
         self.ui.rbt_default.toggled.connect(self.settingsEnable)
         self.ui.btn_set.clicked.connect(self.settingsUpdate)
-        self.ui.rbt_pulseft.toggled.connect(self.enableInputs)
-        self.ui.btn_update.clicked.connect(self.updateValues)
+        self.ui.rbt_pulseft.toggled.connect(self.enableFixed)
+        self.ui.btn_update.clicked.connect(self.updateFixed)
+        self.ui.rbt_normalrt.toggled.connect(self.enableSpeed)
+        self.ui.rbt_pulsert.toggled.connect(self.enableReal)
+        self.ui.btn_startrt.clicked.connect(self.updateReal)
 
     def settingsEnable(self):
         """
@@ -68,6 +92,8 @@ class MainWindow(QMainWindow):
             self.beam.thickness = 0.00575
             self.beam.length = 0.58
             self.beam.density = 7900
+            self.ui.sbx_aposft.setMaximum(60)
+            self.ui.sbx_rposft.setMaximum(60)
             self.ui.lbl_29.setText("Steel")
             self.ui.lbl_30.setText(str(self.beam.elasticmod))
             self.ui.lbl_23.setText(str(self.beam.npoints))
@@ -84,12 +110,14 @@ class MainWindow(QMainWindow):
         and updates the 'Current Values' box on the GUI's
         """
         material = self.ui.cbx_material.currentText()
-        self.beam.elasticmod = self.ui.dbx_elastm.value()
+        self.beam.elasticmod = self.ui.dbx_elastic.value()
         self.beam.npoints = self.ui.sbx_ndiv.value()
         self.beam.width = self.ui.dbx_width.value()
         self.beam.thickness = self.ui.dbx_thickn.value()
         self.beam.length = self.ui.dbx_length.value()
         self.beam.density = self.ui.dbx_density.value()
+        self.ui.sbx_aposft.setMaximum(self.beam.npoints)
+        self.ui.sbx_rposft.setMaximum(self.beam.npoints)
         self.ui.lbl_29.setText(material)
         self.ui.lbl_30.setText(str(self.beam.elasticmod))
         self.ui.lbl_23.setText(str(self.beam.npoints))
@@ -98,7 +126,7 @@ class MainWindow(QMainWindow):
         self.ui.lbl_27.setText(str(self.beam.length))
         self.ui.lbl_28.setText(str(self.beam.density))
 
-    def enableInputs(self):
+    def enableFixed(self):
         """
         This function changes the enabled lables and input boxes,
         depending on the selected type of disturbance.
@@ -124,7 +152,7 @@ class MainWindow(QMainWindow):
             self.ui.lbl_14.setDisabled(True)
             self.ui.dbx_freqft.setDisabled(True)
 
-    def updateValues(self):
+    def updateFixed(self):
         """
         This function receives values for the fixed time simulation.
         The updated values are shown on the GUI's 'Current Values' box.
@@ -194,3 +222,52 @@ class MainWindow(QMainWindow):
         # Ploting 'Acceleration x Time' chart
         self.static_ax2.plot(t, acceleration)
         self.static_ax2.figure.canvas.draw()
+
+    def enableSpeed(self):
+        """
+        This function enables or disables the radio buttons
+        based on the selected time speed.
+        """
+
+        if self.ui.rbt_smotionrt.isChecked():
+            # Slow motion
+            self.ui.lbl_39.setDisabled(False)
+            self.ui.rbt_1.setDisabled(False)
+            self.ui.rbt_01.setDisabled(False)
+            self.ui.rbt_001.setDisabled(False)
+            self.ui.rbt_0001.setDisabled(False)
+        else:
+            # Normal time
+            self.ui.lbl_39.setDisabled(True)
+            self.ui.rbt_1.setDisabled(True)
+            self.ui.rbt_01.setDisabled(True)
+            self.ui.rbt_001.setDisabled(True)
+            self.ui.rbt_0001.setDisabled(True)
+
+    def enableReal(self):
+        """
+        This function enables or disables the input boxes
+        on the Real Time page, based on the selected disturbance.
+        """
+        if self.ui.rbt_pulsert.isChecked():
+            # Single Pulse Mode
+            self.ui.lbl_11.setDisabled(False)
+            self.ui.hsl_force.setDisabled(False)
+            self.ui.lbl_forcert.setDisabled(False)
+            self.ui.lbl_12.setDisabled(True)
+            self.ui.hsl_freq.setDisabled(True)
+            self.ui.lbl_freqrt.setDisabled(True)
+        else:
+            # Harmonic Force mode
+            self.ui.lbl_11.setDisabled(True)
+            self.ui.hsl_force.setDisabled(True)
+            self.ui.lbl_forcert.setDisabled(True)
+            self.ui.lbl_12.setDisabled(False)
+            self.ui.hsl_freq.setDisabled(False)
+            self.ui.lbl_freqrt.setDisabled(False)
+
+    def updateReal(self):
+        """
+        This function recieves the new values for the Real Time
+        simulation and plots the dynamic chart.
+        """

@@ -11,7 +11,7 @@ class CantileverBeam:
     # Parâmetros gerais
     m = 1  # massa: sempre 1 para todas as vigas
 
-    def __init__(self, npoints, width, thickness, lenght, density, elasticmod, Tsampling, 
+    def __init__(self, npoints=60, width=0.05, thickness=0.00575, lenght=0.58, density=7900, elasticmod=2e11, Tsampling=0.004, 
                 nmodes=5, damp=[0.002, 0.002, 0.001, 0.001, 0.001], forcescaler=1, noisestd=0):
         """
         Construtor da classe. Os parâmetros já tem valores padrão relacionados com os valores de referência da viga utilizada.
