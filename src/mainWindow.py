@@ -14,6 +14,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
         # Input Boxes Settings
+        self.ui.gbx_speedsm.setDisabled(True)
         self.ui.dbx_elastic.setMaximum(100000)
         self.ui.sbx_ndiv.setMaximum(1000)
         self.ui.dbx_width.setMaximum(1000)
@@ -27,6 +28,8 @@ class MainWindow(QMainWindow):
         self.ui.sbx_aposft.setMaximum(60)
         self.ui.sbx_rposft.setMaximum(60)
         self.ui.box_time.setDisplayFormat("mm:ss")
+        self.ui.hsl_force.setMaximum(500)
+        self.ui.hsl_freq.setMaximum(1000)
 
         # Cantilever Beam Initialization
         self.beam = CantileverBeam()
@@ -52,9 +55,9 @@ class MainWindow(QMainWindow):
 
         # Real Time Initialization - 'Force x Time' chart
         layout_frt = QVBoxLayout(self.ui.wdg_forcert)
-        dynamic_canvas1 = FigureCanvas(Figure(figsize=(6, 4)))
-        layout_frt.addWidget(dynamic_canvas1)
-        self.dynamic_ax1 = dynamic_canvas1.figure.subplots()
+        dynamic_can1 = FigureCanvas(Figure(figsize=(6, 4)))
+        layout_frt.addWidget(dynamic_can1)
+        self.dynamic_ax1 = dynamic_can1.figure.subplots()
         self.dynamic_ax1.set_title("Force", fontsize=16)
         self.dynamic_ax1.set_xlabel("Time (s)")
         self.dynamic_ax1.set_ylabel("Force (N)")
@@ -73,6 +76,8 @@ class MainWindow(QMainWindow):
         self.ui.btn_set.clicked.connect(self.settingsUpdate)
         self.ui.rbt_pulseft.toggled.connect(self.enableFixed)
         self.ui.btn_update.clicked.connect(self.updateFixed)
+        self.ui.hsl_force.valueChanged.connect(self.updateBars)
+        self.ui.hsl_freq.valueChanged.connect(self.updateBars)
         self.ui.rbt_normalrt.toggled.connect(self.enableSpeed)
         self.ui.rbt_pulsert.toggled.connect(self.enableReal)
         self.ui.btn_startrt.clicked.connect(self.updateReal)
@@ -109,6 +114,7 @@ class MainWindow(QMainWindow):
         This function recieves the settings for the beam
         and updates the 'Current Values' box on the GUI's
         """
+
         material = self.ui.cbx_material.currentText()
         self.beam.elasticmod = self.ui.dbx_elastic.value()
         self.beam.npoints = self.ui.sbx_ndiv.value()
@@ -131,6 +137,7 @@ class MainWindow(QMainWindow):
         This function changes the enabled lables and input boxes,
         depending on the selected type of disturbance.
         """
+
         if self.ui.rbt_harft.isChecked():
             # Harmonic Force Mode
             self.ui.lbl_13.setDisabled(False)
@@ -159,6 +166,7 @@ class MainWindow(QMainWindow):
         The new inputs update the fixed time chart
         when the push button is clicked.
         """
+
         # Receives values
         force_ft = self.ui.dbx_forceft.value()
         time_ft = self.ui.box_time.time()
@@ -223,6 +231,14 @@ class MainWindow(QMainWindow):
         self.static_ax2.plot(t, acceleration)
         self.static_ax2.figure.canvas.draw()
 
+    def updateBars(self):
+        """
+        This function updates the labels with the current values
+        of the force and frequency slide bars.
+        """
+        self.ui.lbl_forcert.setText(str(self.ui.hsl_force.value()))
+        self.ui.lbl_freqrt.setText(str(self.ui.hsl_freq.value()))
+
     def enableSpeed(self):
         """
         This function enables or disables the radio buttons
@@ -231,24 +247,17 @@ class MainWindow(QMainWindow):
 
         if self.ui.rbt_smotionrt.isChecked():
             # Slow motion
-            self.ui.lbl_39.setDisabled(False)
-            self.ui.rbt_1.setDisabled(False)
-            self.ui.rbt_01.setDisabled(False)
-            self.ui.rbt_001.setDisabled(False)
-            self.ui.rbt_0001.setDisabled(False)
+            self.ui.gbx_speedsm.setDisabled(False)
         else:
             # Normal time
-            self.ui.lbl_39.setDisabled(True)
-            self.ui.rbt_1.setDisabled(True)
-            self.ui.rbt_01.setDisabled(True)
-            self.ui.rbt_001.setDisabled(True)
-            self.ui.rbt_0001.setDisabled(True)
+            self.ui.gbx_speedsm.setDisabled(True)
 
     def enableReal(self):
         """
         This function enables or disables the input boxes
         on the Real Time page, based on the selected disturbance.
         """
+
         if self.ui.rbt_pulsert.isChecked():
             # Single Pulse Mode
             self.ui.lbl_11.setDisabled(False)

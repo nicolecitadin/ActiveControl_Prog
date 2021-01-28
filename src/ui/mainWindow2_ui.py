@@ -576,19 +576,26 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.gbx_tspeed = QGroupBox(self.tab_3)
         self.gbx_tspeed.setObjectName(u"gbx_tspeed")
+        self.gbx_tspeed.setEnabled(True)
         self.gbx_tspeed.setStyleSheet(u"font: 12pt \"MS Shell Dlg 2\";")
         self.gridLayout_3 = QGridLayout(self.gbx_tspeed)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.frame = QFrame(self.gbx_tspeed)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_8 = QVBoxLayout(self.frame)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.rbt_normalrt = QRadioButton(self.gbx_tspeed)
+        self.rbt_normalrt = QRadioButton(self.frame)
         self.rbt_normalrt.setObjectName(u"rbt_normalrt")
         self.rbt_normalrt.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
         self.rbt_normalrt.setChecked(True)
 
         self.verticalLayout_3.addWidget(self.rbt_normalrt)
 
-        self.rbt_smotionrt = QRadioButton(self.gbx_tspeed)
+        self.rbt_smotionrt = QRadioButton(self.frame)
         self.rbt_smotionrt.setObjectName(u"rbt_smotionrt")
         self.rbt_smotionrt.setEnabled(True)
         self.rbt_smotionrt.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
@@ -596,53 +603,57 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addWidget(self.rbt_smotionrt)
 
 
-        self.gridLayout_3.addLayout(self.verticalLayout_3, 0, 0, 1, 1)
+        self.verticalLayout_8.addLayout(self.verticalLayout_3)
 
+
+        self.gridLayout_3.addWidget(self.frame, 0, 0, 1, 1)
+
+        self.gbx_speedsm = QGroupBox(self.gbx_tspeed)
+        self.gbx_speedsm.setObjectName(u"gbx_speedsm")
+        self.gbx_speedsm.setEnabled(True)
+        self.horizontalLayout_7 = QHBoxLayout(self.gbx_speedsm)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.rbt_1 = QRadioButton(self.gbx_tspeed)
+        self.rbt_1 = QRadioButton(self.gbx_speedsm)
         self.rbt_1.setObjectName(u"rbt_1")
-        self.rbt_1.setEnabled(False)
+        self.rbt_1.setEnabled(True)
         self.rbt_1.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
 
         self.verticalLayout.addWidget(self.rbt_1)
 
-        self.rbt_01 = QRadioButton(self.gbx_tspeed)
+        self.rbt_01 = QRadioButton(self.gbx_speedsm)
         self.rbt_01.setObjectName(u"rbt_01")
-        self.rbt_01.setEnabled(False)
+        self.rbt_01.setEnabled(True)
         self.rbt_01.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";\n"
 "")
 
         self.verticalLayout.addWidget(self.rbt_01)
 
 
-        self.gridLayout_3.addLayout(self.verticalLayout, 0, 2, 1, 1)
+        self.horizontalLayout_7.addLayout(self.verticalLayout)
 
         self.verticalLayout_9 = QVBoxLayout()
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.rbt_001 = QRadioButton(self.gbx_tspeed)
+        self.rbt_001 = QRadioButton(self.gbx_speedsm)
         self.rbt_001.setObjectName(u"rbt_001")
-        self.rbt_001.setEnabled(False)
+        self.rbt_001.setEnabled(True)
         self.rbt_001.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
 
         self.verticalLayout_9.addWidget(self.rbt_001)
 
-        self.rbt_0001 = QRadioButton(self.gbx_tspeed)
+        self.rbt_0001 = QRadioButton(self.gbx_speedsm)
         self.rbt_0001.setObjectName(u"rbt_0001")
-        self.rbt_0001.setEnabled(False)
+        self.rbt_0001.setEnabled(True)
         self.rbt_0001.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
 
         self.verticalLayout_9.addWidget(self.rbt_0001)
 
 
-        self.gridLayout_3.addLayout(self.verticalLayout_9, 0, 3, 1, 1)
+        self.horizontalLayout_7.addLayout(self.verticalLayout_9)
 
-        self.lbl_39 = QLabel(self.gbx_tspeed)
-        self.lbl_39.setObjectName(u"lbl_39")
-        self.lbl_39.setEnabled(False)
-        self.lbl_39.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";")
 
-        self.gridLayout_3.addWidget(self.lbl_39, 0, 1, 1, 1, Qt.AlignHCenter|Qt.AlignVCenter)
+        self.gridLayout_3.addWidget(self.gbx_speedsm, 0, 1, 1, 1)
 
 
         self.horizontalLayout_9.addWidget(self.gbx_tspeed)
@@ -837,11 +848,11 @@ class Ui_MainWindow(object):
         self.gbx_tspeed.setTitle(QCoreApplication.translate("MainWindow", u"Time Speed", None))
         self.rbt_normalrt.setText(QCoreApplication.translate("MainWindow", u"Normal", None))
         self.rbt_smotionrt.setText(QCoreApplication.translate("MainWindow", u"Slow Motion", None))
+        self.gbx_speedsm.setTitle(QCoreApplication.translate("MainWindow", u"Speed", None))
         self.rbt_1.setText(QCoreApplication.translate("MainWindow", u"x0,1", None))
         self.rbt_01.setText(QCoreApplication.translate("MainWindow", u"x0,01", None))
         self.rbt_001.setText(QCoreApplication.translate("MainWindow", u"x0,001", None))
         self.rbt_0001.setText(QCoreApplication.translate("MainWindow", u"x0,0001", None))
-        self.lbl_39.setText(QCoreApplication.translate("MainWindow", u"Speed:", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Simulation", None))
         self.btn_startrt.setText(QCoreApplication.translate("MainWindow", u"START", None))
         self.btn_stoprt.setText(QCoreApplication.translate("MainWindow", u"STOP", None))
