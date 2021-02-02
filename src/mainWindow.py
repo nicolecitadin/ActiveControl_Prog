@@ -25,15 +25,31 @@ class MainWindow(QMainWindow):
         self.ui.dbx_thickn.setDecimals(6)
         self.ui.dbx_length.setDecimals(3)
         self.ui.dbx_density.setDecimals(3)
-        self.ui.sbx_aposft.setMaximum(60)
-        self.ui.sbx_rposft.setMaximum(60)
         self.ui.box_time.setDisplayFormat("mm:ss")
         self.ui.hsl_force.setMaximum(500)
         self.ui.hsl_freq.setMaximum(1000)
 
         # Cantilever Beam Initialization
-        self.beam = CantileverBeam()
+        npoints = 60
+        width = 0.05
+        thickness = 0.00575
+        lenght = 0.58
+        density = 7900
+        elasticmod = 2e11
+        Tsampling = 0.004
+        nmodes = 5
+        damp = [0.002, 0.002, 0.001, 0.001, 0.001]
+        forcescaler = 1
+        noisestd = 0
+
+        self.beam = CantileverBeam(npoints, width, thickness, lenght, density,
+                                   elasticmod, Tsampling, nmodes,
+                                   damp, forcescaler, noisestd)
         self.beam.reset()
+
+        # Boxes configuration with default number of points
+        self.ui.sbx_aposft.setMaximum(self.beam.npoints)
+        self.ui.sbx_rposft.setMaximum(self.beam.npoints)
 
         # Fixed Time Initialization - 'Force x Time' chart
         layout_fft = QVBoxLayout(self.ui.wdg_forceft)
@@ -91,16 +107,33 @@ class MainWindow(QMainWindow):
 
         if self.ui.rbt_default.isChecked():
             self.ui.gbx_beamset.setDisabled(True)
-            self.beam.elasticmod = 200
-            self.beam.npoints = 60
-            self.beam.width = 0.05
-            self.beam.thickness = 0.00575
-            self.beam.length = 0.58
-            self.beam.density = 7900
-            self.ui.sbx_aposft.setMaximum(60)
-            self.ui.sbx_rposft.setMaximum(60)
+            npoints = 60
+            width = 0.05
+            thickness = 0.00575
+            length = 0.58
+            density = 7900
+            elasticmod = 2e11
+            Tsampling = 0.004
+            nmodes = 5
+            damp = [0.002, 0.002, 0.001, 0.001, 0.001]
+            forcescaler = 1
+            noisestd = 0
+
+            # Creates a new beam with the updated values
+            self.beam = CantileverBeam(npoints, width, thickness, length,
+                                       density, elasticmod, Tsampling,
+                                       nmodes, damp, forcescaler, noisestd)
+            self.beam.reset()
+
+            self.beam = CantileverBeam(npoints, width, thickness, length,
+                                       density, elasticmod, Tsampling,
+                                       nmodes, damp, forcescaler, noisestd)
+            self.beam.reset()
+
+            self.ui.sbx_aposft.setMaximum(self.beam.npoints)
+            self.ui.sbx_rposft.setMaximum(self.beam.npoints)
             self.ui.lbl_29.setText("Steel")
-            self.ui.lbl_30.setText(str(self.beam.elasticmod))
+            self.ui.lbl_30.setText(str(200))
             self.ui.lbl_23.setText(str(self.beam.npoints))
             self.ui.lbl_25.setText(str(self.beam.width))
             self.ui.lbl_26.setText(str(self.beam.thickness))
@@ -115,22 +148,35 @@ class MainWindow(QMainWindow):
         and updates the 'Current Values' box on the GUI's
         """
 
-        material = self.ui.cbx_material.currentText()
-        self.beam.elasticmod = self.ui.dbx_elastic.value()
-        self.beam.npoints = self.ui.sbx_ndiv.value()
-        self.beam.width = self.ui.dbx_width.value()
-        self.beam.thickness = self.ui.dbx_thickn.value()
-        self.beam.length = self.ui.dbx_length.value()
-        self.beam.density = self.ui.dbx_density.value()
-        self.ui.sbx_aposft.setMaximum(self.beam.npoints)
-        self.ui.sbx_rposft.setMaximum(self.beam.npoints)
-        self.ui.lbl_29.setText(material)
-        self.ui.lbl_30.setText(str(self.beam.elasticmod))
-        self.ui.lbl_23.setText(str(self.beam.npoints))
-        self.ui.lbl_25.setText(str(self.beam.width))
-        self.ui.lbl_26.setText(str(self.beam.thickness))
-        self.ui.lbl_27.setText(str(self.beam.length))
-        self.ui.lbl_28.setText(str(self.beam.density))
+        if self.ui.rbt_insert.isChecked():
+            material = self.ui.cbx_material.currentText()
+            elasticmod = float(self.ui.dbx_elastic.value())
+            npoints = int(self.ui.sbx_ndiv.value())
+            width = float(self.ui.dbx_width.value())
+            thickness = float(self.ui.dbx_thickn.value())
+            length = float(self.ui.dbx_length.value())
+            density = float(self.ui.dbx_density.value())
+            Tsampling = 0.004
+            nmodes = 5
+            damp = [0.002, 0.002, 0.001, 0.001, 0.001]
+            forcescaler = 1
+            noisestd = 0
+
+            # Creates a new beam with the updated values
+            self.beam = CantileverBeam(npoints, width, thickness, length,
+                                       density, elasticmod, Tsampling,
+                                       nmodes, damp, forcescaler, noisestd)
+            self.beam.reset()
+
+            self.ui.sbx_aposft.setMaximum(self.beam.npoints)
+            self.ui.sbx_rposft.setMaximum(self.beam.npoints)
+            self.ui.lbl_29.setText(material)
+            self.ui.lbl_30.setText(str(self.beam.elasticmod))
+            self.ui.lbl_23.setText(str(self.beam.npoints))
+            self.ui.lbl_25.setText(str(self.beam.width))
+            self.ui.lbl_26.setText(str(self.beam.thickness))
+            self.ui.lbl_27.setText(str(self.beam.length))
+            self.ui.lbl_28.setText(str(self.beam.density))
 
     def enableFixed(self):
         """
