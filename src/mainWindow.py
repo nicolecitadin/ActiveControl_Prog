@@ -1,4 +1,5 @@
 import numpy as np
+import pyqtgraph as pg
 from PySide2 import QtCore
 from PySide2.QtWidgets import QMainWindow, QVBoxLayout
 from src.ui.mainWindow2_ui import Ui_MainWindow
@@ -43,8 +44,8 @@ class MainWindow(QMainWindow):
         noisestd = 0
 
         self.beam = CantileverBeam(npoints, width, thickness, lenght, density,
-                                   elasticmod, Tsampling, nmodes,
-                                   damp, forcescaler, noisestd)
+                                   elasticmod, Tsampling, nmodes, damp,
+                                   forcescaler, noisestd)
         self.beam.reset()
 
         # Boxes configuration with default number of points
@@ -69,6 +70,7 @@ class MainWindow(QMainWindow):
         self.static_ax2.set_xlabel("Time (s)")
         self.static_ax2.set_ylabel("Acceleration ($m/s^2$)")
 
+        """
         # Real Time Initialization - 'Force x Time' chart
         layout_frt = QVBoxLayout(self.ui.wdg_forcert)
         dynamic_can1 = FigureCanvas(Figure(figsize=(6, 4)))
@@ -86,6 +88,7 @@ class MainWindow(QMainWindow):
         self.dynamic_ax2.set_title("Acceleration", fontsize=16)
         self.dynamic_ax2.set_xlabel("Time (s)")
         self.dynamic_ax2.set_ylabel("Acceleration ($m/s^2$)")
+        """
 
         # Connections
         self.ui.rbt_default.toggled.connect(self.settingsEnable)
@@ -96,7 +99,7 @@ class MainWindow(QMainWindow):
         self.ui.hsl_freq.valueChanged.connect(self.updateBars)
         self.ui.rbt_normalrt.toggled.connect(self.enableSpeed)
         self.ui.rbt_pulsert.toggled.connect(self.enableReal)
-        self.ui.btn_startrt.clicked.connect(self.updateReal)
+        # self.ui.btn_startrt.clicked.connect(self.updateReal)
 
     def settingsEnable(self):
         """
@@ -124,11 +127,9 @@ class MainWindow(QMainWindow):
                                        density, elasticmod, Tsampling,
                                        nmodes, damp, forcescaler, noisestd)
             self.beam.reset()
-
-            self.beam = CantileverBeam(npoints, width, thickness, length,
-                                       density, elasticmod, Tsampling,
-                                       nmodes, damp, forcescaler, noisestd)
-            self.beam.reset()
+            print(self.beam.npoints)
+            print(self.beam.length)
+            print(self.beam.width)
 
             self.ui.sbx_aposft.setMaximum(self.beam.npoints)
             self.ui.sbx_rposft.setMaximum(self.beam.npoints)
@@ -168,6 +169,9 @@ class MainWindow(QMainWindow):
                                        nmodes, damp, forcescaler, noisestd)
             self.beam.reset()
 
+            print(self.beam.npoints)
+            print(self.beam.length)
+            print(self.beam.width)
             self.ui.sbx_aposft.setMaximum(self.beam.npoints)
             self.ui.sbx_rposft.setMaximum(self.beam.npoints)
             self.ui.lbl_29.setText(material)
@@ -317,8 +321,8 @@ class MainWindow(QMainWindow):
             self.ui.lbl_11.setDisabled(True)
             self.ui.hsl_force.setDisabled(True)
             self.ui.lbl_forcert.setDisabled(True)
-            self.ui.lbl_12.setDisabled(False)
-            self.ui.hsl_freq.setDisabled(False)
+            self.ui.lbl_12.setDisableded(False)
+            self.ui.hsl_freq.setDisabl(False)
             self.ui.lbl_freqrt.setDisabled(False)
 
     def updateReal(self):
