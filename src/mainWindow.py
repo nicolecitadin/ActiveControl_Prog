@@ -66,29 +66,32 @@ class MainWindow(QMainWindow):
         static_canvas2 = FigureCanvas(Figure(figsize=(6, 4)))
         layout_aft.addWidget(static_canvas2)
         self.static_ax2 = static_canvas2.figure.subplots()
+        self.i = 0
         self.static_ax2.set_title("Acceleration", fontsize=16)
         self.static_ax2.set_xlabel("Time (s)")
         self.static_ax2.set_ylabel("Acceleration ($m/s^2$)")
 
-        """
+        # Real Time Charts - Color Setup
+        pg.setConfigOption('background', 'w')
+        pg.setConfigOption('foreground', 'k')
+
         # Real Time Initialization - 'Force x Time' chart
         layout_frt = QVBoxLayout(self.ui.wdg_forcert)
-        dynamic_can1 = FigureCanvas(Figure(figsize=(6, 4)))
+        dynamic_can1 = pg.GraphicsWindow()
         layout_frt.addWidget(dynamic_can1)
-        self.dynamic_ax1 = dynamic_can1.figure.subplots()
-        self.dynamic_ax1.set_title("Force", fontsize=16)
-        self.dynamic_ax1.set_xlabel("Time (s)")
-        self.dynamic_ax1.set_ylabel("Force (N)")
+        self.dynamic_ax1 = dynamic_can1.addPlot(title="Force")
+        self.dynamic_ax1.setLabel('left', "Force (N)")
+        self.dynamic_ax1.setLabel('bottom', "Time (s)")
+        self.curve1 = self.dynamic_ax1.plot()
 
         # Real Time Initialization - 'Accelaration x Time' chart
         layout_art = QVBoxLayout(self.ui.wdg_accert)
-        dynamic_canvas2 = FigureCanvas(Figure(figsize=(6, 4)))
+        dynamic_canvas2 = pg.GraphicsWindow()
         layout_art.addWidget(dynamic_canvas2)
-        self.dynamic_ax2 = dynamic_canvas2.figure.subplots()
-        self.dynamic_ax2.set_title("Acceleration", fontsize=16)
-        self.dynamic_ax2.set_xlabel("Time (s)")
-        self.dynamic_ax2.set_ylabel("Acceleration ($m/s^2$)")
-        """
+        self.dynamic_ax2 = dynamic_canvas2.addPlot(title="Acceleration")
+        self.dynamic_ax2.setLabel('left', "Acceleration (m/s²)")
+        self.dynamic_ax2.setLabel('bottom', "Time (s)")
+        self.curve2 = self.dynamic_ax2.plot()
 
         # Connections
         self.ui.rbt_default.toggled.connect(self.settingsEnable)
