@@ -169,6 +169,19 @@ class Ui_MainWindow(object):
         self.cbx_material.addItem("")
         self.cbx_material.addItem("")
         self.cbx_material.addItem("")
+        self.cbx_material.addItem("")
+        self.cbx_material.addItem("")
+        self.cbx_material.addItem("")
+        self.cbx_material.addItem("")
+        self.cbx_material.addItem("")
+        self.cbx_material.addItem("")
+        self.cbx_material.addItem("")
+        self.cbx_material.addItem("")
+        self.cbx_material.addItem("")
+        self.cbx_material.addItem("")
+        self.cbx_material.addItem("")
+        self.cbx_material.addItem("")
+        self.cbx_material.addItem("")
         self.cbx_material.setObjectName(u"cbx_material")
         self.cbx_material.setStyleSheet(u"font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
@@ -738,6 +751,13 @@ class Ui_MainWindow(object):
         self.twd_windows.addTab(self.tab_2, "")
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
+        self.verticalLayout_10 = QVBoxLayout(self.tab_4)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.textBrowser = QTextBrowser(self.tab_4)
+        self.textBrowser.setObjectName(u"textBrowser")
+
+        self.verticalLayout_10.addWidget(self.textBrowser)
+
         self.twd_windows.addTab(self.tab_4, "")
 
         self.verticalLayout_2.addWidget(self.twd_windows)
@@ -801,10 +821,23 @@ class Ui_MainWindow(object):
         self.lbl_27.setText(QCoreApplication.translate("MainWindow", u"0.58", None))
         self.lbl_28.setText(QCoreApplication.translate("MainWindow", u"7900", None))
         self.gbx_beamset.setTitle(QCoreApplication.translate("MainWindow", u"Settings", None))
-        self.cbx_material.setItemText(0, QCoreApplication.translate("MainWindow", u"Steel", None))
-        self.cbx_material.setItemText(1, QCoreApplication.translate("MainWindow", u"Iron", None))
-        self.cbx_material.setItemText(2, QCoreApplication.translate("MainWindow", u"Silver", None))
-        self.cbx_material.setItemText(3, QCoreApplication.translate("MainWindow", u"Other", None))
+        self.cbx_material.setItemText(0, QCoreApplication.translate("MainWindow", u"A\u00e7o Estrutural A-36", None))
+        self.cbx_material.setItemText(1, QCoreApplication.translate("MainWindow", u"A\u00e7o Inoxid\u00e1vel 304", None))
+        self.cbx_material.setItemText(2, QCoreApplication.translate("MainWindow", u"A\u00e7o-ferramenta L2", None))
+        self.cbx_material.setItemText(3, QCoreApplication.translate("MainWindow", u"Alum\u00ednio Forjado 2014-T6", None))
+        self.cbx_material.setItemText(4, QCoreApplication.translate("MainWindow", u"Alum\u00ednio Forjado 6061-T6", None))
+        self.cbx_material.setItemText(5, QCoreApplication.translate("MainWindow", u"Cobre Bronze C86100", None))
+        self.cbx_material.setItemText(6, QCoreApplication.translate("MainWindow", u"Cobre Lat\u00e3o Vermelho C83400", None))
+        self.cbx_material.setItemText(7, QCoreApplication.translate("MainWindow", u"Concreto Alta Resist\u00eancia", None))
+        self.cbx_material.setItemText(8, QCoreApplication.translate("MainWindow", u"Concreto Baixa Resist\u00eancia", None))
+        self.cbx_material.setItemText(9, QCoreApplication.translate("MainWindow", u"Ferro Fundido Cinza ASTM 20", None))
+        self.cbx_material.setItemText(10, QCoreApplication.translate("MainWindow", u"Ferro Fundido Male\u00e1vel ASTM A-197", None))
+        self.cbx_material.setItemText(11, QCoreApplication.translate("MainWindow", u"Madeira Estrutural Abeto Douglas", None))
+        self.cbx_material.setItemText(12, QCoreApplication.translate("MainWindow", u"Madeira Estrutural Abeto Branco", None))
+        self.cbx_material.setItemText(13, QCoreApplication.translate("MainWindow", u"Magn\u00e9sio Am 1004-T61", None))
+        self.cbx_material.setItemText(14, QCoreApplication.translate("MainWindow", u"Pl\u00e1stico Refor\u00e7ado Keviar 49", None))
+        self.cbx_material.setItemText(15, QCoreApplication.translate("MainWindow", u"Pl\u00e1stico Refor\u00e7ado 30% Vidro", None))
+        self.cbx_material.setItemText(16, QCoreApplication.translate("MainWindow", u"Tit\u00e2nio Ti-6A1-4V", None))
 
         self.lbl_36.setText(QCoreApplication.translate("MainWindow", u"Density:", None))
         self.lbl_37.setText(QCoreApplication.translate("MainWindow", u"Material:", None))
@@ -863,6 +896,14 @@ class Ui_MainWindow(object):
         self.lbl_12.setText(QCoreApplication.translate("MainWindow", u"Frequency (Hz)", None))
         self.twd_windows.setTabText(self.twd_windows.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Real Time", None))
         self.twd_windows.setTabText(self.twd_windows.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"3D Simulation", None))
+        self.textBrowser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">-</span> <span style=\" font-size:10pt; font-weight:600;\">Elastic Modulus Values</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">ROSA, Willian de Araujo. </span><span style=\" font-size:10pt; font-weight:600;\">Propriedades dos Ma"
+                        "teriais Utilizados em Engenharia</span><span style=\" font-size:10pt;\">. Dispon\u00edvel em: http://www.profwillian.com/materiais/propriedades.asp. Acesso em: 17 fev. 2021.</span></p></body></html>", None))
         self.twd_windows.setTabText(self.twd_windows.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Info", None))
     # retranslateUi
 

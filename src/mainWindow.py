@@ -47,6 +47,7 @@ class MainWindow(QMainWindow):
                                    elasticmod, Tsampling, nmodes, damp,
                                    forcescaler, noisestd)
         self.beam.reset()
+        self.prev_material = "Titânio Ti-6A1-4V"
 
         # Boxes configuration with default number of points
         self.ui.sbx_aposft.setMaximum(self.beam.npoints)
@@ -66,7 +67,6 @@ class MainWindow(QMainWindow):
         static_canvas2 = FigureCanvas(Figure(figsize=(6, 4)))
         layout_aft.addWidget(static_canvas2)
         self.static_ax2 = static_canvas2.figure.subplots()
-        self.i = 0
         self.static_ax2.set_title("Acceleration", fontsize=16)
         self.static_ax2.set_xlabel("Time (s)")
         self.static_ax2.set_ylabel("Acceleration ($m/s^2$)")
@@ -95,6 +95,7 @@ class MainWindow(QMainWindow):
 
         # Connections
         self.ui.rbt_default.toggled.connect(self.settingsEnable)
+        self.ui.cbx_material.currentTextChanged.connect(self.settingsMaterial)
         self.ui.btn_set.clicked.connect(self.settingsUpdate)
         self.ui.rbt_pulseft.toggled.connect(self.enableFixed)
         self.ui.btn_update.clicked.connect(self.updateFixed)
@@ -130,9 +131,6 @@ class MainWindow(QMainWindow):
                                        density, elasticmod, Tsampling,
                                        nmodes, damp, forcescaler, noisestd)
             self.beam.reset()
-            print(self.beam.npoints)
-            print(self.beam.length)
-            print(self.beam.width)
 
             self.ui.sbx_aposft.setMaximum(self.beam.npoints)
             self.ui.sbx_rposft.setMaximum(self.beam.npoints)
@@ -146,6 +144,50 @@ class MainWindow(QMainWindow):
         else:
             self.ui.gbx_beamset.setDisabled(False)
 
+    def settingsMaterial(self):
+        """
+        This function receives the chosen material from the comboBox
+        and then updates the elastic modulus box based on the material.
+        However, the user may still change the elasticmod value.
+        The automatic value is only a sugestion for simulation.
+        """
+        material = self.ui.cbx_material.currentText()
+
+        if (material == 'Aço Estrutural A-36'):
+            self.ui.dbx_elastic.setValue(200)
+        if (material == 'Aço-ferramenta L2'):
+            self.ui.dbx_elastic.setValue(200)
+        elif (material == 'Aço Inoxidável 304'):
+            self.ui.dbx_elastic.setValue(193)
+        elif (material == 'Alumínio Forjado 2014-T6'):
+            self.ui.dbx_elastic.setValue(73.1)
+        elif (material == 'Alumínio Forjado 6061-T6'):
+            self.ui.dbx_elastic.setValue(68.9)
+        elif (material == 'Cobre Bronze C86100'):
+            self.ui.dbx_elastic.setValue(103)
+        elif (material == 'Cobre Latão Vermelho C83400'):
+            self.ui.dbx_elastic.setValue(101)
+        elif (material == 'Concreto Alta Resistência'):
+            self.ui.dbx_elastic.setValue(29)
+        elif (material == 'Concreto Baixa Resistência'):
+            self.ui.dbx_elastic.setValue(22.1)
+        elif (material == 'Ferro Fundido Cinza ASTM 20'):
+            self.ui.dbx_elastic.setValue(67)
+        elif (material == 'Ferro Fundido Maleável ASTM A-197'):
+            self.ui.dbx_elastic.setValue(172)
+        elif (material == 'Madeira Estrutural Abeto Douglas'):
+            self.ui.dbx_elastic.setValue(13.1)
+        elif (material == 'Madeira Estrutual Abeto Branco'):
+            self.ui.dbx_elastic.setValue(9.65)
+        elif (material == 'Magnésio Am 1004-T61'):
+            self.ui.dbx_elastic.setValue(44.7)
+        elif (material == 'Plástico Reforçado Keviar 49'):
+            self.ui.dbx_elastic.setValue(131)
+        elif (material == 'Plástico Reforçado 30% Vidro'):
+            self.ui.dbx_elastic.setValue(72.4)
+        elif (material == 'Titânio Ti-6A1-4V'):
+            self.ui.dbx_elastic.setValue(120)
+
     def settingsUpdate(self):
         """
         This function recieves the settings for the beam
@@ -154,7 +196,7 @@ class MainWindow(QMainWindow):
 
         if self.ui.rbt_insert.isChecked():
             material = self.ui.cbx_material.currentText()
-            elasticmod = float(self.ui.dbx_elastic.value())
+            elasticmod = (float(self.ui.dbx_elastic.value()) * (10 ** 9))
             npoints = int(self.ui.sbx_ndiv.value())
             width = float(self.ui.dbx_width.value())
             thickness = float(self.ui.dbx_thickn.value())
@@ -172,18 +214,16 @@ class MainWindow(QMainWindow):
                                        nmodes, damp, forcescaler, noisestd)
             self.beam.reset()
 
-            print(self.beam.npoints)
-            print(self.beam.length)
-            print(self.beam.width)
             self.ui.sbx_aposft.setMaximum(self.beam.npoints)
             self.ui.sbx_rposft.setMaximum(self.beam.npoints)
             self.ui.lbl_29.setText(material)
-            self.ui.lbl_30.setText(str(self.beam.elasticmod))
+            self.ui.lbl_30.setText(str(self.ui.dbx_elastic.value()))
             self.ui.lbl_23.setText(str(self.beam.npoints))
             self.ui.lbl_25.setText(str(self.beam.width))
             self.ui.lbl_26.setText(str(self.beam.thickness))
             self.ui.lbl_27.setText(str(self.beam.length))
             self.ui.lbl_28.setText(str(self.beam.density))
+            self.prev_material = material
 
     def enableFixed(self):
         """

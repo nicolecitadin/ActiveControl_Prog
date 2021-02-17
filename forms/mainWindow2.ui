@@ -260,22 +260,87 @@ background-color: rgb(255, 255, 255);</string>
                </property>
                <item>
                 <property name="text">
-                 <string>Steel</string>
+                 <string>Aço Estrutural A-36</string>
                 </property>
                </item>
                <item>
                 <property name="text">
-                 <string>Iron</string>
+                 <string>Aço Inoxidável 304</string>
                 </property>
                </item>
                <item>
                 <property name="text">
-                 <string>Silver</string>
+                 <string>Aço-ferramenta L2</string>
                 </property>
                </item>
                <item>
                 <property name="text">
-                 <string>Other</string>
+                 <string>Alumínio Forjado 2014-T6</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Alumínio Forjado 6061-T6</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Cobre Bronze C86100</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Cobre Latão Vermelho C83400</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Concreto Alta Resistência</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Concreto Baixa Resistência</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Ferro Fundido Cinza ASTM 20</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Ferro Fundido Maleável ASTM A-197</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Madeira Estrutural Abeto Douglas</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Madeira Estrutural Abeto Branco</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Magnésio Am 1004-T61</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Plástico Reforçado Keviar 49</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Plástico Reforçado 30% Vidro</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Titânio Ti-6A1-4V</string>
                 </property>
                </item>
               </widget>
@@ -1150,6 +1215,21 @@ background-color: rgb(255, 255, 255);</string>
        <attribute name="title">
         <string>Info</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <item>
+         <widget class="QTextBrowser" name="textBrowser">
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;-&lt;/span&gt; &lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Elastic Modulus Values&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;ROSA, Willian de Araujo. &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Propriedades dos Materiais Utilizados em Engenharia&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;. Disponível em: http://www.profwillian.com/materiais/propriedades.asp. Acesso em: 17 fev. 2021.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
