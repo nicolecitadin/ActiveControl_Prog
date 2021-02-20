@@ -29,6 +29,7 @@ class MainWindow(QMainWindow):
         self.ui.box_time.setDisplayFormat("mm:ss")
         self.ui.hsl_force.setMaximum(500)
         self.ui.hsl_freq.setMaximum(1000)
+        self.ui.dbx_elastic.setValue(200)
 
         # Cantilever Beam Initialization
         npoints = 60
@@ -50,8 +51,8 @@ class MainWindow(QMainWindow):
         self.prev_material = "Titânio Ti-6A1-4V"
 
         # Boxes configuration with default number of points
-        self.ui.sbx_aposft.setMaximum(self.beam.npoints)
-        self.ui.sbx_rposft.setMaximum(self.beam.npoints)
+        self.ui.sbx_aposft.setMaximum(self.beam.npoints - 1)
+        self.ui.sbx_rposft.setMaximum(self.beam.npoints - 1)
 
         # Fixed Time Initialization - 'Force x Time' chart
         layout_fft = QVBoxLayout(self.ui.wdg_forceft)
@@ -132,8 +133,8 @@ class MainWindow(QMainWindow):
                                        nmodes, damp, forcescaler, noisestd)
             self.beam.reset()
 
-            self.ui.sbx_aposft.setMaximum(self.beam.npoints)
-            self.ui.sbx_rposft.setMaximum(self.beam.npoints)
+            self.ui.sbx_aposft.setMaximum(self.beam.npoints - 1)
+            self.ui.sbx_rposft.setMaximum(self.beam.npoints - 1)
             self.ui.lbl_29.setText("Steel")
             self.ui.lbl_30.setText(str(200))
             self.ui.lbl_23.setText(str(self.beam.npoints))
@@ -214,8 +215,8 @@ class MainWindow(QMainWindow):
                                        nmodes, damp, forcescaler, noisestd)
             self.beam.reset()
 
-            self.ui.sbx_aposft.setMaximum(self.beam.npoints)
-            self.ui.sbx_rposft.setMaximum(self.beam.npoints)
+            self.ui.sbx_aposft.setMaximum(self.beam.npoints - 1)
+            self.ui.sbx_rposft.setMaximum(self.beam.npoints - 1)
             self.ui.lbl_29.setText(material)
             self.ui.lbl_30.setText(str(self.ui.dbx_elastic.value()))
             self.ui.lbl_23.setText(str(self.beam.npoints))
